@@ -6,6 +6,7 @@ public class App {
         myLibrary = readLibrary("books.txt");
         readStudents("students.txt");
         displayMenu();
+
     }
 
     // Calling this displayMenu allows me to call it later on in the code as well which is helpful 
@@ -58,6 +59,7 @@ public class App {
                         String name = io.input();
                         io.output("The Book \"" + myLibrary.getBooks()[i].getTitle() + "\" has been successfully checked out by " + name + ".");
                         myLibrary.getBooks()[i].checkOut(name);
+                        
                     }
                 } 
             }
@@ -68,10 +70,30 @@ public class App {
         }
 
         else if (choice == 5){
-
+            io.output ("Name the book that is being returned"); 
+            String Rtitle = io.input();
+            /** This for loop runs through all the books in the library and checks that the name that
+             * the user inputs is an actual book in the library
+             */
+            boolean found = false;
+            for (int i = 0; i < myLibrary.getNumBooks(); i++) {
+                if (myLibrary.getBooks()[i].getTitle().equals(Rtitle)) {
+                    found = true;
+                    if (myLibrary.getBooks()[i].isCheckedOut()) { // This checks if the book is already checked out or not
+                       // Add the code that edits the text file
+                        io.output("Thank you.");
+                    } else {
+                        io.output("This book has not been checked out. Returning to menu");
+                    }
+                } 
+            }
+            if (!found) {
+                io.output("Book not found. Returning to the menu");
+            }
         }
 
         else if (choice == 6){
+        
 
         }
 
