@@ -38,4 +38,9 @@ public class Library {
     public Book[] getBooks() {
         return books;
     }
+   
+    public Book getBook(int index) {
+        return books.get(index);
+    }
+
 }

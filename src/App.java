@@ -13,27 +13,24 @@ public class App {
     public void displayMenu() {
         io.output("Welcome to your library!");
         io.output("[1] Add new book to library"); 
-        io.output("[2] Add new student to class"); // CHANGE THIS LATER
-        io.output("[3] List books"); 
-        io.output("[4] Check out a book"); 
-        io.output("[5] Return a book"); 
-        io.output("[6] Angry email"); 
+        io.output("[2] List books"); 
+        io.output("[3] Check out a book"); 
+        io.output("[4] Return a book"); 
+        io.output("[5] Angry email"); 
         io.output("[0] To leave library"); 
 
 
         int choice = io.inputInt();
         
         if (choice == 1){ 
-
-            
-
-        }
-
-        else if (choice == 2){ 
+        io.output("What is the title of the book you would like to add to your library?"); 
+        String newbook = io.input();
+        // Write code to edit the file
 
         }
 
-        else if (choice == 3){
+
+        else if (choice == 2){
           /**  This for loop runs through all the books in the text file and lists them all, it ends when the file ends as is 
                set by: i < myLibrary.getNumBooks */
 
@@ -42,7 +39,7 @@ public class App {
             }
         }
 
-        else if (choice == 4){
+        else if (choice == 3){
             io.output ("Name the book that is being checked out"); 
             String title = io.input();
             /** This for loop runs through all the books in the library and checks that the name that
@@ -69,7 +66,7 @@ public class App {
             
         }
 
-        else if (choice == 5){
+        else if (choice == 4){
             io.output ("Name the book that is being returned"); 
             String Rtitle = io.input();
             /** This for loop runs through all the books in the library and checks that the name that
@@ -92,10 +89,17 @@ public class App {
             }
         }
 
-        else if (choice == 6){
-        
-
+        else if (choice == 5){
+            for (int i = 0; i < myLibrary.getNumBooks(); i++) {
+                Book b = myLibrary.getBook(i);
+                if (b.getDaysGone() > 21) {
+            io.output("Dear ___ you have had the book ___ for ___ days. In this classroom we have an agreement, 21 days maximum!!! RETURN THE BOOK TOMORROW."); 
+                }
+                else { 
+                    io.output("None of your students have checked out a book for too long!! All is good :) Returning to menu"); 
+                }
         }
+    }
 
 
         else if (choice == 0) {
