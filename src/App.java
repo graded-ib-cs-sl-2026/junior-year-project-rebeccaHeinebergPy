@@ -1,10 +1,13 @@
+import java.time.LocalDate;
+
 public class App {
     private Library myLibrary;
+    private Book book; 
     private InputOutput io = new InputOutput();
 
     public void start() {
         myLibrary = readLibrary("books.txt");
-        readStudents("students.txt");
+        readStudents("students.txt"); // THIS IS USELESS
         displayMenu();
 
     }
@@ -115,6 +118,7 @@ public class App {
         else if (choice == 5) {
             for (int i = 0; i < myLibrary.getNumBooks(); i++) {
                 Book b = myLibrary.getBook(i);
+                // 
                 if (b.getDaysGone() > 21) {
                     io.output("Dear " + myLibrary.getBook(i).getStudent() + ", you have had the book \""
                             + myLibrary.getBook(i).getTitle() + "\" for " + myLibrary.getBook(i).getDaysGone()
@@ -148,10 +152,13 @@ public class App {
             Book b = l.addBook(parts[0].trim());
             if (parts[1].trim().equals("Unavailable")) {
                 b.setCheckedOut(true);
-                b.setStudent(parts[2].trim());
-                b.setDaysGone(Integer.parseInt(parts[3].trim())); // "trim" makes it so that it ignores any spaces as theyre probably not intentional
+                b.setStudent(parts[2].trim()); // "trim" makes it so that it ignores any spaces as theyre probably not intentional
+                try {
+                    b.setCheckedOutDate(LocalDate.parse(parts[3].trim()));
+                } catch (Exception e) {
+                    io.output("Book is not checked out silly " + b.getTitle());
+                }            
             }
-
         }
 
         return l;

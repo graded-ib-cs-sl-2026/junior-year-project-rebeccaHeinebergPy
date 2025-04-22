@@ -36,6 +36,10 @@ public class Book {
         return checkedOut;
     }
 
+    public void setCheckedOutDate(LocalDate checkedOutDate){
+        this.checkedOutDate = checkedOutDate; 
+    }
+
     public void setCheckedOut(boolean checkedOut) {
         this.checkedOut = checkedOut;
     }
@@ -71,5 +75,6 @@ public class Book {
         } else {
             return ( title + " // Available // N/A // N/A"); // I am replacing the default toString method with a custom one so I can print it out in an easy to read way
         }
-    }
-}
+    } 
+
+} 
