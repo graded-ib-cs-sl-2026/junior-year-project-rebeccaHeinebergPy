@@ -65,9 +65,9 @@ public class Book {
     @Override // I need to write override in order to replace it you need to tell Java that you want to replace the built in method 
     public String toString() { // Every object has a built in toString function that prints out its object address
         if (checkedOut) { 
-            return ("Title: " + title + " // Status: Unavailable // Student: " + student + " // Days Gone: " + daysGone);
+            return (title + " // Unavailable // " + student + " // " + daysGone);
         } else {
-            return ("Title: " + title + " // Status: Available // Student: N/A // Days Gone: N/A"); // I am replacing the default toString method with a custom one so I can print it out in an easy to read way
+            return ( title + " // Available // N/A // N/A"); // I am replacing the default toString method with a custom one so I can print it out in an easy to read way
         }
     }
 }

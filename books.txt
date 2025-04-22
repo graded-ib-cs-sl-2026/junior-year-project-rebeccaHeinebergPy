@@ -1,9 +1,9 @@
-Title: The You You Are // Status: Available // Student: N/A // Days gone: N/A
-Title: Harry Potter and the Chamber of Secrets // Status: Available // Student: N/A // Days gone: N/A
-Title: Piggy and Elephant // Status: Available // Student: N/A // Days gone: N/A
-Title: Cat in the Hat // Status: Available // Student: N/A // Days gone: N/A
-Title: The Picture of Dorian Gray, Status: Available // Days gone: N/A
-Title: Twilight // Status: Available // Student: N/A // Days gone: N/A
-Title: It Ends With Us // Status: Available // Student: N/A // Days gone: N/A
-Title: Playground // Status: Available // Student: N/A // Days gone: N/A
-Title: The Bible (King James Version) // Status: Available // Student: N/A // Days gone: N/A
+The You You Are // Available // N/A // N/A
+Harry Potter and the Chamber of Secrets // Available // N/A // N/A
+Piggy and Elephant // Available // N/A // N/A
+Cat in the Hat // Available // N/A // N/A
+The Picture of Dorian Gray, Available // Available // N/A // N/A
+Twilight // Unavailable // David // 0
+It Ends With Us // Available // N/A // N/A
+Playground // Available // N/A // N/A
+The Bible (King James Version) // Available // N/A // N/A

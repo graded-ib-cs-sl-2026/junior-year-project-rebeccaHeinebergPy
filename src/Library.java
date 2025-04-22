@@ -22,9 +22,10 @@ public class Library {
     // I wrote this to save the book text file into an array of books
     }
 
-    public void addBook(String title) {
+    public Book addBook(String title) {
         books[numBooks] = new Book(title);
         numBooks++;
+        return books[numBooks - 1];
     }
 
     public int getNumBooks() {
