@@ -9,8 +9,8 @@ public class App {
 
     }
 
-    public void updateFile() {
-        io.openWriteFile("books.txt");
+    public void updateFile() { // I made this a method so I could call it multiple times
+        io.openWriteFile("books.txt"); // Clears the file and replaces it with new book array with all the updated information
         Book[] books = myLibrary.getBooks();
         for (int i = 0; i < myLibrary.getNumBooks(); i++) {
             io.writeToFile(books[i]);
@@ -21,7 +21,7 @@ public class App {
     // Calling this displayMenu allows me to call it later on in the code as well
     // which is helpful
     public void displayMenu() {
-        updateFile();
+        updateFile(); // I put this here so that the file is updated every time something is edited
 
         io.output("Welcome to your library!");
         io.output("[1] Add new book to library");
@@ -38,7 +38,7 @@ public class App {
             Book newbook = new Book(io.input());
             // Edits the array of books:
             myLibrary.getBooks()[myLibrary.getNumBooks()] = newbook; // I made the input a book so I could save it to
-                                                                     // the file
+                                                                    // the file
             myLibrary.setNumBooks(myLibrary.getNumBooks() + 1);
         }
 
@@ -99,10 +99,9 @@ public class App {
             for (int i = 0; i < myLibrary.getNumBooks(); i++) {
                 if (myLibrary.getBooks()[i].getTitle().equals(Rtitle)) {
                     found = true;
-                    if (myLibrary.getBooks()[i].isCheckedOut()) { // This checks if the book is already checked out or
-                                                                  // not
+                    if (myLibrary.getBooks()[i].isCheckedOut()) { // This checks if the book is already checked out or not
                         io.output("Thank you.");
-                        myLibrary.getBooks()[i].setCheckedOut(false);
+                        myLibrary.getBooks()[i].setCheckedOut(false); // Updates the file 
                     } else {
                         io.output("This book has not been checked out. Returning to menu");
                     }
@@ -143,14 +142,14 @@ public class App {
 
         }
 
-        while (io.fileHasNextLine()) {
-            String next = io.getNextLine();
-            String[] parts = next.split("//");
+        while (io.fileHasNextLine()) { // I had to edit this as it originally read the entire line as the title
+            String next = io.getNextLine(); 
+            String[] parts = next.split("//"); // This part of the code separates the tile from the availability from the student. That is why I used //. I was originally going to use commas but those might be present in book titles
             Book b = l.addBook(parts[0].trim());
             if (parts[1].trim().equals("Unavailable")) {
                 b.setCheckedOut(true);
                 b.setStudent(parts[2].trim());
-                b.setDaysGone(Integer.parseInt(parts[3].trim()));
+                b.setDaysGone(Integer.parseInt(parts[3].trim())); // "trim" makes it so that it ignores any spaces as theyre probably not intentional
             }
 
         }
@@ -176,3 +175,7 @@ public class App {
         new App().start();
     }
 }
+
+
+
+
