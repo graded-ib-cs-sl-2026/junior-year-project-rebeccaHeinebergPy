@@ -4,6 +4,7 @@
 
 import java.util.Scanner;
 import java.io.*;
+import java.lang.reflect.Array;
 
 public class InputOutput {
     
@@ -53,11 +54,11 @@ public class InputOutput {
      * Used to write ONE line of text to the end of our write file
      * @param s
      */
-    public void writeToFile(String s) {
+    public void writeToFile(Book b) {
         if (fileOutput == null) {
             return;
         }else {
-            fileOutput.println(s);
+            fileOutput.println(b);
             fileOutput.flush();
         }
     }

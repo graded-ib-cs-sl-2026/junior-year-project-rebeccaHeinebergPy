@@ -24,9 +24,16 @@ public class App {
         
         if (choice == 1){ 
         io.output("What is the title of the book you would like to add to your library?"); 
-        String newbook = io.input();
-        // Write code to edit the file
-
+        Book newbook = new Book(io.input());
+      // Edits the array of books: 
+        myLibrary.getBooks()[myLibrary.getNumBooks()] = newbook; // I made the input a book so I could save it to the file
+        myLibrary.setNumBooks(myLibrary.getNumBooks() + 1); 
+      // Adds the array to the file so that it includes the new book
+        io.openWriteFile("books.txt"); 
+        for (int i = 0; i < myLibrary.getNumBooks(); i++) { // I changed the write to file method so it would take book objects 
+            io.writeToFile(myLibrary.getBooks()[i]);
+           }
+        io.closeWriteFile(); 
         }
 
 

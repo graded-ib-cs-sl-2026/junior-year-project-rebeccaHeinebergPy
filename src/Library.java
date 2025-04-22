@@ -31,6 +31,10 @@ public class Library {
         return numBooks;
     }
 
+    public void setNumBooks(int x) {
+        numBooks = x;
+    }
+
     public int getNumStudents() {
         return numStudents;
     }
