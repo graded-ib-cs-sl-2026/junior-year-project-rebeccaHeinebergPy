@@ -44,7 +44,7 @@ public class Library {
     }
    
     public Book getBook(int index) {
-        return books.get(index);
+        return books[index];
     }
 
 }

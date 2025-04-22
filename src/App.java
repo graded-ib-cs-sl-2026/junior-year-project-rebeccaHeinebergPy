@@ -63,7 +63,7 @@ public class App {
                         String name = io.input();
                         io.output("The Book \"" + myLibrary.getBooks()[i].getTitle() + "\" has been successfully checked out by " + name + ".");
                         myLibrary.getBooks()[i].checkOut(name);
-                        
+                        io.writeToFile(myLibrary.getBooks()[i]);
                     }
                 } 
             }
@@ -100,7 +100,7 @@ public class App {
             for (int i = 0; i < myLibrary.getNumBooks(); i++) {
                 Book b = myLibrary.getBook(i);
                 if (b.getDaysGone() > 21) {
-            io.output("Dear ___ you have had the book ___ for ___ days. In this classroom we have an agreement, 21 days maximum!!! RETURN THE BOOK TOMORROW."); 
+                    io.output("Dear " + myLibrary.getBook(i).getStudent() + ", you have had the book \"" + myLibrary.getBook(i).getTitle() + "\" for " + myLibrary.getBook(i).getDaysGone() + " days. In this classroom we have an agreement, 21 days maximum!!! RETURN THE BOOK TOMORROW."); 
                 }
                 else { 
                     io.output("None of your students have checked out a book for too long!! All is good :) Returning to menu"); 

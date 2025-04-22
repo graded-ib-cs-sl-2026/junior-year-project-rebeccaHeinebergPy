@@ -42,6 +42,7 @@ public class Book {
     // Originally I had saved the checked out date here but I realized that I don't always need it so I made it two separate things
 
     public int getDaysGone() {
+        if (checkedOutDate == null) return 0; // safely return 0 if never checked out
         final LocalDate today = LocalDate.now();
         return (int)ChronoUnit.DAYS.between(checkedOutDate, today);
     /**  Here I call the code that I wrote to check the local date and use it to find out how long 
@@ -64,9 +65,9 @@ public class Book {
     @Override // I need to write override in order to replace it you need to tell Java that you want to replace the built in method 
     public String toString() { // Every object has a built in toString function that prints out its object address
         if (checkedOut) { 
-            return ("Title: " + title + ", Status: Checked out by " + student + " for " + daysGone + " days.");
+            return ("Title: " + title + " // Status: Unavailable // Student: " + student + " // Days Gone: " + daysGone);
         } else {
-            return ("Title: " + title + ", Status: Available"); // I am replacing the default toString method with a custom one so I can print it out in an easy to read way
+            return ("Title: " + title + " // Status: Available // Student: N/A // Days Gone: N/A"); // I am replacing the default toString method with a custom one so I can print it out in an easy to read way
         }
     }
 }
