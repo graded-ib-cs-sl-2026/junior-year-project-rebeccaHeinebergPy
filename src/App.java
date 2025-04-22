@@ -116,18 +116,24 @@ public class App {
         }
 
         else if (choice == 5) {
+           boolean anyOverdue = false; 
+
             for (int i = 0; i < myLibrary.getNumBooks(); i++) {
                 Book b = myLibrary.getBook(i);
-                // 
+                
                 if (b.getDaysGone() > 21) {
+                   anyOverdue = true; // Without this my code would print out "None of your students have checked out a book for too long..." for every single book that wasnt checked out for too long when I only intedned it to print out if ALL the books were looking good. 
                     io.output("Dear " + myLibrary.getBook(i).getStudent() + ", you have had the book \""
                             + myLibrary.getBook(i).getTitle() + "\" for " + myLibrary.getBook(i).getDaysGone()
                             + " days. In this classroom we have an agreement, 21 days maximum!!! RETURN THE BOOK TOMORROW.");
-                } else {
+                } 
+            }
+                
+            if (!anyOverdue) { // Only runs if all the books are returned in the appropriate time 
                     io.output(
                             "None of your students have checked out a book for too long!! All is good :) Returning to menu");
-                }
             }
+            
         }
 
         else if (choice == 0) {
