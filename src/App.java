@@ -7,7 +7,7 @@ public class App {
 
     public void start() {
         myLibrary = readLibrary("books.txt");
-        readStudents("students.txt"); // THIS IS USELESS
+        readStudents("students.txt"); // This is useless but im too scared to delete this cuz I don't wanna ruin my code. If you see any useless stuff in my code, 99% sure I realized but was too scared to delete it and ruin everything btw
         displayMenu();
 
     }

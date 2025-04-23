@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit;
 public class Book {
     private String title;
     private boolean checkedOut = false;
-    private int daysGone = 0;
+    private int daysGone = 0; 
     private LocalDate checkedOutDate; 
     private String student = "";
     // Default setting for each book 
