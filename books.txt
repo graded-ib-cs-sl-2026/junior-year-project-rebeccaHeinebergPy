@@ -2,8 +2,9 @@ The You You Are // Available // N/A // N/A
 Harry Potter and the Chamber of Secrets // Available // N/A // N/A
 Piggy and Elephant // Available // N/A // N/A
 Cat in the Hat // Available // N/A // N/A
-The Picture of Dorian Gray // Unavailable // Bibs // 2025-02-04
-Twilight // Unavailable // David // null
-It Ends With Us // Unavailable // Jimbo // 2025-01-22
+The Picture of Dorian Gray // Available // N/A // N/A
+Twilight // Available // N/A // N/A
+It Ends With Us // Available // N/A // N/A
 Playground // Available // N/A // N/A
 The Bible (King James Version) // Available // N/A // N/A
+Book // Available // N/A // N/A

@@ -105,6 +105,7 @@ public class App {
                     if (myLibrary.getBooks()[i].isCheckedOut()) { // This checks if the book is already checked out or not
                         io.output("Thank you.");
                         myLibrary.getBooks()[i].setCheckedOut(false); // Updates the file 
+                        myLibrary.getBooks()[i].setCheckedOutDate(null); 
                     } else {
                         io.output("This book has not been checked out. Returning to menu");
                     }

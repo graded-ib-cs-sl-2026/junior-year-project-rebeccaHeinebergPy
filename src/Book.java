@@ -8,7 +8,7 @@ public class Book {
     private String title;
     private boolean checkedOut = false;
     private int daysGone = 0;
-    private LocalDate checkedOutDate;
+    private LocalDate checkedOutDate; 
     private String student = "";
     // Default setting for each book 
 
@@ -46,7 +46,9 @@ public class Book {
     // Originally I had saved the checked out date here but I realized that I don't always need it so I made it two separate things
 
     public int getDaysGone() {
-        if (checkedOutDate == null) return 0; // safely return 0 if never checked out
+        if (!checkedOut) { // Originally we were looking at the checked out date but that was not needed.
+            return 0; 
+        } 
         final LocalDate today = LocalDate.now();
         return (int)ChronoUnit.DAYS.between(checkedOutDate, today);
     /**  Here I call the code that I wrote to check the local date and use it to find out how long 
